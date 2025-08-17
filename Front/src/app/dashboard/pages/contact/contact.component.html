@@ -1,0 +1,19 @@
+<div class="messages">
+    <h2>Inbox Messages</h2>
+    <div class="msg-grid">
+        <div class="msg-card" *ngFor="let msg of msgs;let i=index">
+            <div class="msg-header">
+                <h3 class="msg-subject">{{msg.subject}}</h3> 
+            </div>
+            <div class="msg-details">
+                <p><strong>Email:</strong> {{msg.email}}</p>
+                <p><strong>Mobile:</strong> {{msg.mobile}}</p>
+                <p><strong>Message:</strong> {{msg.msg}}</p>
+            </div>
+            <div class="msg-actions">
+                <button class="btn btn-danger" (click)="deleteMsg(msg._id,i)">Delete</button>
+            </div>
+        </div>
+
+    </div>
+</div>

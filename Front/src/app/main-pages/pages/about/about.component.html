@@ -1,0 +1,38 @@
+<div class="about-content mt-4">
+    <h3 class="title">About Me
+        <span></span>
+    </h3>
+    <p class="desc">{{ aboutData.about?.aboutText }}</p>
+    <ul class="headers">
+        <li (click)="showSection('skills')" [class.active]="active === 'skills'">Skills</li>
+        <li (click)="showSection('certf')" [class.active]="active === 'certf'">Certifications</li>
+        <li (click)="showSection('edu')" [class.active]="active === 'edu'">Education</li>
+    </ul>
+
+    <div class="skills" *ngIf="active === 'skills'">
+    <div class="skills-section" *ngFor="let category of aboutData.skills">
+        <h4>{{ category.category }}</h4>
+        <ul class="skills-grid">
+            <li *ngFor="let skill of category.skills">
+                <img [src]="'http://localhost:4000/images/'+skill.image" [alt]="skill.name">
+                <span>{{ skill.name }}</span>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+   <ul class="certf" *ngIf="active==='certf'">
+        <li *ngFor="let cert of aboutData.certifications">
+            <i [class]="cert.icon"></i>
+            {{ cert.title }}, {{cert.year}}
+        </li>
+    </ul>
+
+    <ul class="edu" *ngIf="active==='edu'">
+        <li *ngFor="let edu of aboutData.education">
+        {{ edu.degree }} – {{ edu.institution}} ({{ edu.graduation }})
+    </li>
+    </ul>
+
+</div>

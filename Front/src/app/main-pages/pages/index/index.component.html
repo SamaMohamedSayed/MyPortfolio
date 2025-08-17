@@ -1,0 +1,26 @@
+<div class="content" *ngFor="let item of homeDetails">
+    <div class="details" >
+        <h5 class="animate-fade-in animate-delay-1">Hello, my name is</h5>
+        <h1 class="animate-fade-in animate-delay-2">{{item.name}}</h1>
+        <h2 class="py-3 animate-fade-in animate-delay-3">I'm a <span class="typing-text">{{ displayText }}</span><span class="cursor">|</span></h2>
+        <p class="animate-fade-in animate-delay-4">{{item.description}}</p>
+        <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatem illo dicta tenetur at ratione pariatur possimus quia 
+            praesentium, adipisci saepe cupiditate omnis itaque illum alias a eum dolorum et, culpa eos molestias quisquam soluta fugiat ex! Porro aliquid et,
+            nesciunt esse commodi impedit animi maiores libero autem exercitationem corporis.</p> -->
+        <p class="animate-fade-in animate-delay-5" ><i class="fas fa-bullseye"></i> Ready to see what I do best? Let’s dive in!</p>
+        <div class="social-links d-flex pt-3 pb-2 animate-fade-in animate-delay-5">
+            <div class="social"><a href="#"><i class="fab fa-linkedin"></i></a></div>
+            <div class="social"><a href="#"><i class="fab fa-github"></i></a></div>
+            <div class="social"><a href="#"><i class="fa-brands fa-google"></i></a></div>
+            <div class="social"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></div>
+            
+        </div>
+
+        <button class="btn btn-custom animate-fade-in animate-delay-5" (click)="showCv()">Download my CV</button>
+    </div>
+    <div class="image me-5 rotate-in animate-fade-in animate-delay-3">
+        <img [src]="'http://localhost:4000/images/'+item.img" alt="">
+    </div>
+</div>
+
+

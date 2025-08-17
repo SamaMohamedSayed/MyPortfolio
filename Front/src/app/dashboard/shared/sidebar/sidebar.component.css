@@ -1,0 +1,58 @@
+
+aside.sidebar{
+    width:260px;
+    /* background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); */
+    background-color: #141d2f;
+    height: 100vh;
+    /* backdrop-filter:blur(6px); */
+    padding:20px;
+    border-right:1px solid rgba(255,255,255,0.03);
+}
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px
+}
+.brand .logo{
+    width:44px;
+    height:44px;
+    border-radius:10px;
+    background:linear-gradient(135deg,#94a3b8,#6bf0f0);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    color:#042028
+}
+.brand h1{
+    font-size:16px;
+    margin:0;
+    color: #e6eef6;
+}
+nav.menu{
+    margin-top:30px
+}
+nav.menu a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px;
+    border-radius:10px;
+    text-decoration:none;
+    margin-bottom:6px;
+    color: #ced7e3;    
+}
+nav.menu a:hover{
+    color: #6bf0f0;
+    background:linear-gradient(90deg, rgba(6,182,212,0.12), rgba(6,182,212,0.06));
+}
+nav.menu a.active{
+    background:linear-gradient(90deg, rgba(6,182,212,0.12), rgba(6,182,212,0.06));
+    color:#6bf0f0
+}
+.small{
+    font-size:12px;
+    color: #94a3b8;
+}
+

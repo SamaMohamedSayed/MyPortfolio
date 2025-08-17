@@ -1,0 +1,128 @@
+.desc{
+    line-height: 28px;
+    margin: 30px 0;
+}
+.title{
+    font-weight: 700;
+    & span{
+    height: 5px;
+    width: 150px;
+    background-color: #95d7d7;
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+ul {
+    list-style: none;
+}
+.headers{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 50px;
+    cursor: pointer;
+
+}
+.headers li{
+    border-bottom: 2px solid #eceaea;
+}
+.active{
+    color: #95d7d7;
+    border-bottom: 2px solid #95d7d7
+}
+.skills{
+    /* margin-bottom: 20px; */
+    display: flex;
+    justify-content: space-between;
+}
+.skills-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px;
+}
+.skills-grid li {
+  /* width: 120px; */
+  text-align: center;
+}
+.skills-section h4 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+}
+.skills-grid img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.skills-grid img:hover {
+  transform: scale(1.1);
+}
+
+.skills-grid span {
+  display: block;
+  font-size: 16px;
+  color: #555;
+}
+
+
+.certf {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 15px;
+  max-width: 600px;
+  /* margin: auto; */
+}
+
+.certf li {
+  background: #ffffff;
+  padding: 15px 20px;
+  border-left: 5px solid #95d7d7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certf li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.certf i {
+  color: #8eeded;
+  font-size: 18px;
+}
+
+.edu {
+  list-style-type: none;         /* لإزالة النقاط */
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.8;              /* مسافة بين السطور */
+  color: #333;                   /* لون النص */
+}
+
+.edu li {
+  padding: 8px 0;                /* مسافة عمودية بين العناصر */
+  border-bottom: 1px solid #ddd; /* خط فاصل خفيف */
+}
+
+.edu li:last-child {
+  border-bottom: none;           /* إزالة الخط من آخر عنصر */
+}
+

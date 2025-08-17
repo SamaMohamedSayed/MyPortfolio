@@ -1,0 +1,49 @@
+.messages h2{
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #e6eef6;
+}
+.msg-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+}
+.msg-card{
+    background: #141d2f;
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.msg-header h3{
+    margin: 0;
+    font-size: 22px;
+    color: #e6eef6;
+}
+
+.msg-details p{
+    margin: 4px 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color:#ced7e3;
+
+}
+.msg-actions{
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+.btn{
+    padding: 6px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+strong{
+    color: #e6eef6;
+}

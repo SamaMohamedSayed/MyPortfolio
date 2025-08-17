@@ -1,0 +1,94 @@
+.title{
+    font-weight: 700;
+    & span{
+    height: 5px;
+    width: 165px;
+    background-color: #a1ecec;
+    display: block;
+    margin-top: 8px;
+    }
+}
+.smile{
+    color: #a1ecec;
+    font-size: 20px;
+}
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    margin-top: 50px;
+}
+img{
+    width: 380px;
+    border-radius: 5px;
+}
+.btn-custom{
+    background-color: #a1ecec;
+    padding: 10px 27px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.8s ease;
+}
+.btn-custom:hover{
+    transform: scale(1.1);
+    transition: 0.8s ease;
+}
+.project-card{
+    position: relative;
+}
+.non-visible{
+    text-align: center;
+    background: linear-gradient(#565656b6,#1f1e1ee1);
+    width: 380px;
+    height: 210px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform: translateY(10%);
+    transition: all 0.5s ease;
+}
+.project-card:hover .non-visible{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-width{
+    max-width: 1000px !important;
+}
+.custom-arrow{
+    color: rgb(50, 50, 50) !important;
+    font-size: 30px;
+    opacity: 1 !important;
+}
+.re{
+    position: relative;
+}
+.arrow{
+    position: absolute;
+    top: 120px;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    background: 0 0;
+    filter: var(--bs-carousel-control-icon-filter);
+    border: 0;
+    transition: all 0.8s ease;
+}
+.right{
+    text-align: right;
+    margin-right: -24px;
+    right: 0;
+}
+.left{
+    text-align: left;
+    left: 0;
+    margin-left: -24px;
+}
+.arrow:hover{
+    transform: scale(1.1);
+    transition: all 0.8s ease;
+}

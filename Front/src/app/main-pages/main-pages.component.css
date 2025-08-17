@@ -1,0 +1,25 @@
+:host {
+    background-color: #fdfbfb;
+    display: block;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.layout {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+app-navbar {
+    display: block;
+    width: 270px;
+    background-color: #f8f9fa;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 30px;
+}

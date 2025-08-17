@@ -1,0 +1,42 @@
+@if(myForm){
+    <!-- Content -->
+<main class="content">
+    <section class="grid">
+        <div class="card">
+            <h3>Projects</h3>
+            <p class="small">Total: <strong>12</strong></p>
+        </div>
+        <div class="card">
+            <h3>Skills</h3>
+            <p class="small">Total: <strong>18</strong></p>
+        </div>
+        <div class="card">
+            <h3>Messages</h3>
+            <p class="small">Unread: <strong>3</strong></p>
+        </div>
+        <div class="card">
+            <h3>Recent Activity</h3>
+            <p class="small">Added project "Mealify" 2 days ago</p>
+        </div>
+    </section>
+
+        <!-- Page Section -->
+        <div class="page-section">
+            
+            <form action="" [formGroup]="myForm" class="form-custom row" (ngSubmit)="submit()">
+                <div class="img col-4 position-relative">
+                    <img [src]="'http://localhost:4000/images/'+homePage.img" alt="">
+                    <input type="file" #fileInput class="d-none" (change)="onImgSelected($event)">
+                    <i class="fa-solid fa-upload fs-1 upload-icon" (click)="fileInput.click()"></i>
+                </div>
+                <div class="inputs col-4">
+                    <input type="text" formControlName="name" class="form-control">
+                    <input type="file" (change)="onFileSelected($event)" #cvInput class="d-none">
+                    <button class="btn btn-primary" (click)="cvInput.click()">Update CV</button>
+                    <textarea name="" id="" formControlName="description" class="form-control"></textarea>
+                </div>
+                <button class="btn btn-primary mt-3">Edit</button>
+            </form>
+        </div>
+</main>
+}

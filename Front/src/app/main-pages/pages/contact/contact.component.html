@@ -1,0 +1,53 @@
+<div class="contact-content">
+    <h3 class="title mt-4">Contact Me  <span></span></h3>
+    <div class="custom-width">
+        <form action="" class="row g-2" [formGroup]="myForm" (ngSubmit)="submit()" >
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Full Name" formControlName="name">
+                <div class="msg" *ngIf="myForm.get('name')?.errors?.['required'] && (myForm.get('name')?.touched || submitted)">
+                    Name is required
+                </div>
+                <div class="msg" *ngIf="myForm.get('name')?.errors?.['minlength'] && (myForm.get('name')?.touched || submitted)">
+                    Minimum Char is 3
+                </div>
+            </div>
+
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Email Address" formControlName="email">
+                <div class="msg" *ngIf="myForm.get('email')?.errors?.['required'] && (myForm.get('email')?.touched || submitted)">
+                    Email is required
+                </div>
+                <div class="msg" *ngIf="myForm.get('email')?.errors?.['pattern'] && (myForm.get('email')?.touched || submitted)">
+                    Please enter a valid email address, e.g. example&#64;domain.com
+                </div>
+
+            </div>
+
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Mobile Number" formControlName="mobile">
+                <div class="msg" *ngIf="myForm.get('mobile')?.errors?.['required'] && (myForm.get('mobile')?.touched || submitted)">
+                    Mobile is required
+                </div>
+            </div>
+
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Email Subject" formControlName="subject">
+                <div class="msg" *ngIf="myForm.get('subject')?.errors?.['required'] && (myForm.get('subject')?.touched || submitted)">
+                    Subject is required
+                </div>
+            </div>
+
+            <div class="col-12">
+                <textarea name="" id="" class="form-control" placeholder="Your Message" formControlName="msg"></textarea>
+                <div class="msg" *ngIf="myForm.get('msg')?.errors?.['required'] && (myForm.get('msg')?.touched || submitted)">
+                    Message is required
+                </div>
+                <div class="msg" *ngIf="myForm.get('msg')?.errors?.['minlength'] && (myForm.get('msg')?.touched || submitted)">
+                    Minimum Char is 10
+                </div>
+            </div>
+            <button class="btn col-3">Send Message</button>
+        </form>
+    </div>
+    
+</div>

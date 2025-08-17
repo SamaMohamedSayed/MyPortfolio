@@ -1,0 +1,42 @@
+.title{
+    font-weight: 700;
+    & span{
+    height: 5px;
+    width: 165px;
+    background-color: #a1ecec;
+    display: block;
+    margin-top: 8px;
+    }
+}
+
+.custom-width{
+    width: 75%;
+    margin: auto;
+    margin-top: 60px;
+}
+input,textarea{
+    padding: 13px;
+}
+textarea{
+    height: 210px;
+}
+button{
+    background-color: #67e0e0;
+    color: white;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    margin: auto;
+    margin-top: 10px;
+}
+button:hover{
+    background-color: #67e0e0 !important;
+    color: white !important;
+}
+
+input.ng-touched.ng-invalid{
+    border:1px solid red
+}
+.msg{
+    color: red;
+}

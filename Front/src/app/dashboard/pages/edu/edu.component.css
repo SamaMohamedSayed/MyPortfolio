@@ -1,0 +1,19 @@
+.add{
+  background-color: #6bf0f0;
+  color: #141d2f;
+  font-size: 40px;
+  font-weight: 700;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  transition: 0.5s ease;
+  margin-top: 20px;
+  cursor: pointer;
+
+}
+.add:hover{
+  transform: scale(1.1);
+  transition: 0.5s ease;
+
+}

@@ -1,0 +1,96 @@
+/* .content{
+  position: relative;
+} */
+.msg{
+  color: #e6eef6;
+  margin-bottom: 15px;
+}
+
+.msg-textArea{
+  width: 250px;
+  height: 100px;
+  border-radius: 10px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.info-card {
+  background-color: #141d2f;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #6bf0f0;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: #e6eef6;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #555;
+  color: #ced7e3;
+}
+
+.drop-icon{
+  color: #e6eef6;
+  font-size: 20px;
+  cursor: pointer;
+}
+.dropList{
+  background-color: #e6eef6;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.dropdown{
+  position: absolute;
+  right: 0;
+}
+.dropdown:hover .dropList{
+  visibility: visible;
+  /* transition: all 1s ease; */
+  opacity: 1;
+}
+.add{
+  background-color: #6bf0f0;
+  color: #141d2f;
+  font-size: 40px;
+  font-weight: 700;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  transition: 0.5s ease;
+  margin-top: 20px;
+  cursor: pointer;
+
+}
+.add:hover{
+  transform: scale(1.1);
+  transition: 0.5s ease;
+
+}

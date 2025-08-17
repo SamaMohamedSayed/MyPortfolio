@@ -1,0 +1,56 @@
+<div class="content">
+<div class="card-grid">
+  <div class="info-card" *ngFor="let service of services">
+    <div class="dropdown">
+      <i class="fa-solid fa-list drop-icon"></i>
+      <ul class="dropList list-unstyled">
+        <li (click)="editService(service._id)">
+          <i class="fa-solid fa-pen-to-square text-primary mb-2"></i>Edit
+        </li>
+        <li (click)="deleteService(service._id)"><i class="fa-solid fa-trash text-danger"></i>Delete</li>
+      </ul>
+    </div>
+    <div class="icon"><i [class]="service.icon"></i></div>
+
+    <ng-container *ngIf="ServiceId === service._id; else viewMode">
+      <form [formGroup]="myForm" (ngSubmit)="saveService()">
+        <input type="text" formControlName="title">
+        <textarea formControlName="description"></textarea>
+        <button class="btn btn-success btn-sm mt-2">Save</button>
+      </form>
+    </ng-container>
+
+
+    <ng-template #viewMode>
+      <h3 class="title">{{ service.title }}</h3>
+      <p class="description">{{ service.description }}</p>
+    </ng-template>
+  </div>
+</div>
+<div class="add" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  +
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title text-center fs-5" id="staticBackdropLabel">Add Service</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" [formGroup]="myForm" (ngSubmit)="submit()">
+          <input type="text" placeholder="icon: Ex: fa-solid fa-list" formControlName="icon" class="form-control">
+          <input type="text" placeholder="Service Name " formControlName="title" class="form-control my-3">
+          <input type="text" placeholder="description " formControlName="description" class="form-control">
+          <div class="text-center my-3">
+            <button class="btn btn-primary px-5">Add</button>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
