@@ -9,7 +9,8 @@ const projectSchema = new mongoose.Schema({
     role: { type: String }, 
     cover: { type: String, required: true },
     images: [{ type: String }],
+    url:{type:String},
     ishidden:{type:Boolean,default:false}
 });
- 
+
 module.exports = mongoose.model('Project', projectSchema);

@@ -57,7 +57,7 @@ export class OverviewComponent {
   }
     console.log(formData)
     this.global.homeUpdates(formData).subscribe(res=>{
-      console.log(res);
+      console.log('res',res);
     })
   }
 

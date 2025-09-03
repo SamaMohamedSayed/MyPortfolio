@@ -26,7 +26,8 @@ export class ProjectComponent {
         title:new FormControl('',),
         description:new FormControl(''),
         images:new FormControl([]),
-        technologies:new FormControl('')
+        technologies:new FormControl(''),
+        url:new FormControl('')
       })
     this.global.projectPage().subscribe(res=>{
       this.projects=res
@@ -43,7 +44,8 @@ export class ProjectComponent {
         createdAt:selected.createdAt,
         role:selected.role,
         description:selected.description,
-        technologies:selected.technologies
+        technologies:selected.technologies,
+        url:selected.url
       })
       this.projectId = id;
       console.log(this.projectId)
@@ -78,6 +80,7 @@ export class ProjectComponent {
     formData.append('technologies', this.myForm.get('technologies')?.value);
     formData.append('createdAt', this.myForm.get('createdAt')?.value);
     formData.append('role', this.myForm.get('role')?.value);
+    formData.append('url', this.myForm.get('url')?.value);
 
     if (this.coverFile) {
       formData.append('cover', this.coverFile);

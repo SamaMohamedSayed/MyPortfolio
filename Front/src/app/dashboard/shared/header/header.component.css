@@ -36,7 +36,7 @@ header.topbar{
     gap:8px;
     padding:8px 12px;
     border-radius:999px;
-    background:#141d2f;
+    background:#ECEFF1;
     border:1px solid rgba(255,255,255,0.03);
     & i{
         color:#e6eef6;

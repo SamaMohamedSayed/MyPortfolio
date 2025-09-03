@@ -11,8 +11,8 @@ router.get('/',async(req,res)=>{
 
 router.post('/',upload.fields([
     {name:'cover',maxCount:1},
-    {name:'images',maxCount:5}]),async(req,res)=>{
-    const {title,description,createdAt,technologies,role}=req.body
+    {name:'images',maxCount:10}]),async(req,res)=>{
+    const {title,description,createdAt,technologies,role,url}=req.body
     const cover = req.files?.cover?.[0]?.filename;
     const images = req.files?.images?.map(file => file.filename);
     const pro=new Project({
@@ -23,6 +23,7 @@ router.post('/',upload.fields([
         role,
         cover,
         images,
+        url
 
     })
     await pro.save()
@@ -38,6 +39,7 @@ router.patch('/:id',upload.fields([
             createdAt:req.body.createdAt,
             technologies:req.body.technologies,
             role:req.body.role,
+            url:req.body.url
         }
         if (req.files.cover && req.files.cover.length > 0) {
         updateData.cover = req.files.cover[0].filename;

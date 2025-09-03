@@ -2,7 +2,7 @@
 aside.sidebar{
     width:260px;
     /* background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); */
-    background-color: #141d2f;
+    background-color: #ECEFF1;
     height: 100vh;
     /* backdrop-filter:blur(6px); */
     padding:20px;
@@ -41,15 +41,15 @@ nav.menu a{
     border-radius:10px;
     text-decoration:none;
     margin-bottom:6px;
-    color: #ced7e3;    
+    color: #000000;    
 }
 nav.menu a:hover{
-    color: #6bf0f0;
+    color: #4FC3F7;
     background:linear-gradient(90deg, rgba(6,182,212,0.12), rgba(6,182,212,0.06));
 }
 nav.menu a.active{
     background:linear-gradient(90deg, rgba(6,182,212,0.12), rgba(6,182,212,0.06));
-    color:#6bf0f0
+    color:#4FC3F7
 }
 .small{
     font-size:12px;

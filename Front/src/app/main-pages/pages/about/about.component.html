@@ -9,15 +9,14 @@
         <li (click)="showSection('edu')" [class.active]="active === 'edu'">Education</li>
     </ul>
 
-    <div class="skills" *ngIf="active === 'skills'">
-    <div class="skills-section" *ngFor="let category of aboutData.skills">
+    <div class="skills row" *ngIf="active === 'skills'">
+    <div class="skills-section col-lg-4 col-md-6 col-12 mt-4 mt-lg-0" *ngFor="let category of skills">
         <h4>{{ category.category }}</h4>
         <ul class="skills-grid">
             <li *ngFor="let skill of category.skills">
                 <img [src]="'http://localhost:4000/images/'+skill.image" [alt]="skill.name">
                 <span>{{ skill.name }}</span>
-            </li>
-        
+            </li> 
         </ul>
     </div>
 </div>
@@ -25,14 +24,19 @@
    <ul class="certf" *ngIf="active==='certf'">
         <li *ngFor="let cert of aboutData.certifications">
             <i [class]="cert.icon"></i>
-            {{ cert.title }}, {{cert.year}}
+            {{ cert.title }}, {{cert.year|date}}
         </li>
     </ul>
 
     <ul class="edu" *ngIf="active==='edu'">
-        <li *ngFor="let edu of aboutData.education">
+        <div *ngFor="let edu of aboutData.education">
+            <li>{{edu.degree}}</li>
+            <li>{{edu.institution}}</li>
+            <li>{{edu.graduation}}</li>
+        </div>
+        <!-- <li *ngFor="let edu of aboutData.education">
         {{ edu.degree }} – {{ edu.institution}} ({{ edu.graduation }})
-    </li>
+    </li> -->
     </ul>
 
 </div>

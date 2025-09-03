@@ -3,7 +3,7 @@
     & span{
     height: 5px;
     width: 165px;
-    background-color: #a1ecec;
+    background-color: #4fc3f7;
     display: block;
     margin-top: 8px;
     }
@@ -21,7 +21,7 @@ textarea{
     height: 210px;
 }
 button{
-    background-color: #67e0e0;
+    background-color: #4fc3f7;
     color: white;
     font-weight: 700;
     font-size: 17px;
@@ -30,7 +30,7 @@ button{
     margin-top: 10px;
 }
 button:hover{
-    background-color: #67e0e0 !important;
+    background-color: #77d3fe !important;
     color: white !important;
 }
 

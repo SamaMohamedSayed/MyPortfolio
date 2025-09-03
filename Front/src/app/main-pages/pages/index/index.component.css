@@ -1,12 +1,12 @@
 .content {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 7%;
+    align-items: center; */
+    margin-top: 5%;
     /* color: #272343; */
 }
 .typing-text{
-    color: #79d8d8;
+    color: #4fc3f7;
 }
 .cursor {
     display: inline-block;
@@ -24,51 +24,51 @@
         opacity: 0;
     }
 }
-img {
-    width: 380px;
-    /* border-radius: 50%; */
-} 
 
 .image {
-    position: relative;
     display: inline-block;
-    width: 425px;
-    padding: 22px 20px;
-
+    position: relative;
+    /* padding: 7px; */
+    border-right: 20px solid #4fc3f7; 
 }
+
 .image::before,
 .image::after {
     content: "";
     position: absolute;
-    width: 65px;
-    height: 65px;
-    border: 8px solid #95d7d7;
+    right: 0;       
+    width: 50%; 
+    height: 20px;      
+    background: #4fc3f7;
 }
 
 .image::before {
-    top: 0;
-    right: 0;
-    border-left: none;
-    border-bottom: none;
+    top: 0; 
 }
 
 .image::after {
-    bottom: 0;
-    left: 0;
-    border-right: none;
-    border-top: none;
+    bottom: 0; 
 }
+
+.image img {
+    width: 300px;
+    /* height: 410px; */
+    display: block;
+    padding: 20px 0;
+}
+
 .btn-custom{
-    background-color: #79d8d8;
+    background-color: #4fc3f7;
     color: white;
     font-weight: 600;
     font-size: 17px;
     margin-top: 20px;
     padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
 
 }
 .btn-custom:hover{
-    background-color: #77eded;
+    background-color: #7cd5ff;
 }
 .social {
     border: 2px solid #ccc;
@@ -135,6 +135,10 @@ img {
 
 .rotate-in {
     animation: rotateIn 2s ease forwards;
+}
+
+.x{
+    color: #4fc3f7;
 }
 
 

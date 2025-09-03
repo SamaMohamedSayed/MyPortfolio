@@ -3,7 +3,7 @@
     & span{
     height: 5px;
     width: 165px;
-    background-color: #a1ecec;
+    background-color: #4fc3f7;
     display: block;
     margin-top: 8px;
     }
@@ -12,16 +12,20 @@
 .cards-container {
     margin-top: 60px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: 1fr;
     gap: 15px;
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* justify-content: space-between; */
 }
 
 .service-card {
     background-color: white;
-    padding: 25px 20px;
+    padding: 17px 15px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* width: 30%; */
 }
 
 .service-card h4 {
@@ -41,6 +45,19 @@
 }
 i{
     font-size: 28px;
-    color: #a1ecec;
+    color: #4fc3f7;
     margin-bottom: 20px;
+}
+
+
+@media (min-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

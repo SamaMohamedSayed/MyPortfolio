@@ -16,6 +16,7 @@ const homeSchema=new mongoose.Schema({
         required:true
     },
     cv:{type:String},
+    
     socialLinks:{
         type:String
     }

@@ -47,6 +47,7 @@ export class SkillsComponent {
 
     this.selectedId = category._id;
     this.isEditModalOpen = true;
+    console.log("Modal opened:", this.isEditModalOpen);
   }
 
   onUpdate() {
