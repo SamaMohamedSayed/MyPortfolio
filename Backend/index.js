@@ -4,6 +4,7 @@ const port=4000
 const mongoose=require('mongoose')
 const cors = require('cors');
 
+
 app.use(express.json())
 app.use(cors());
 
@@ -28,6 +29,14 @@ app.use('/project',projectPath)
 app.use('/contact',contactPath)
 app.use('/about',aboutPath)
 app.use('/images',express.static('./img'))
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'dist/potrfolio')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/potrfolio/index.html'));
+});
+
 
 
 
