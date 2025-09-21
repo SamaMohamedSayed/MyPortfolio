@@ -1,6 +1,4 @@
-/* .content{
-  position: relative;
-} */
+
 .msg{
   color: #e6eef6;
   margin-bottom: 15px;
@@ -13,12 +11,12 @@
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
 .info-card {
-  background-color: #141d2f;
+  background-color: #ECEFF1;
   padding: 20px;
   border-radius: 10px;
   text-align: left;
@@ -33,25 +31,25 @@
 }
 
 .icon {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   margin-bottom: 10px;
-  color: #6bf0f0;
+  color: #4fc3f7;
 }
 
 .title {
   font-size: 1.2rem;
-  color: #e6eef6;
+  color: #000000;
   margin-bottom: 8px;
 }
 
 .description {
   font-size: 0.95rem;
-  color: #555;
-  color: #ced7e3;
+  color: #454545;
+  /* color: #ced7e3; */
 }
 
 .drop-icon{
-  color: #e6eef6;
+  color: #000000;
   font-size: 20px;
   cursor: pointer;
 }
@@ -76,8 +74,8 @@
   opacity: 1;
 }
 .add{
-  background-color: #6bf0f0;
-  color: #141d2f;
+  background-color: #4fc3f7;
+  color: #FFFFFF;
   font-size: 40px;
   font-weight: 700;
   width: 60px;
@@ -85,7 +83,7 @@
   border-radius: 50%;
   text-align: center;
   transition: 0.5s ease;
-  margin-top: 20px;
+  margin: 20px 20px 20px 0;
   cursor: pointer;
 
 }
@@ -94,3 +92,42 @@
   transition: 0.5s ease;
 
 }
+.save-btn{
+  width: 130px;
+  transition: all 0.3s ease-in-out;
+  background: #4fc3f7;
+  color: white;
+}
+.save-btn:hover{
+    background-color: #2abafd;
+}
+textarea{
+  height: 210px;
+}
+ul.service-points {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.service-points li:first-child{
+    margin-left: 0;
+}
+ul.service-points li:not(:first-child) {
+    list-style-type: disc;
+    margin-left: 32px; 
+    margin-top: 10px;
+}
+
+
+@media (min-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+

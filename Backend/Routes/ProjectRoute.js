@@ -9,6 +9,7 @@ router.get('/',async(req,res)=>{
     res.json(pro)
 })
 
+
 router.post('/',upload.fields([
     {name:'cover',maxCount:1},
     {name:'images',maxCount:10}]),async(req,res)=>{

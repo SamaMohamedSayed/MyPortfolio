@@ -45,27 +45,12 @@ export class IndexComponent {
   }
 
   typeEffect() {
-    const currentText = this.texts[this.textIndex];
+    this.displayText = this.texts[this.textIndex];
 
-    if (this.isDeleting) {
-      this.displayText = currentText.substring(0, this.charIndex--);
-    } else {
-      this.displayText = currentText.substring(0, this.charIndex++);
-    }
-
-    let typingSpeed = this.isDeleting ? 50 : 100;
-
-    if (!this.isDeleting && this.charIndex === currentText.length+1) {
-      this.isDeleting = true;
-      typingSpeed = 2000;
-
-    } else if (this.isDeleting && this.charIndex === 0) {
-      this.isDeleting = false;
-      this.textIndex = (this.textIndex + 1) % this.texts.length;
-      typingSpeed = 500;
-    }
-
-    setTimeout(() => this.typeEffect(), typingSpeed);
+  setInterval(() => {
+    this.textIndex = (this.textIndex + 1) % this.texts.length;
+    this.displayText = this.texts[this.textIndex];
+  }, 3000);
   }
 
   

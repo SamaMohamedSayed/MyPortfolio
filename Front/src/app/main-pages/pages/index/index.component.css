@@ -1,9 +1,5 @@
 .content {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
     margin-top: 5%;
-    /* color: #272343; */
 }
 .typing-text{
     color: #4fc3f7;
@@ -14,6 +10,9 @@
     background-color: #333;
     animation: blink 0.7s infinite;
     margin-left: 2px;
+}
+.desc{
+    width: 100%;
 }
 
 @keyframes blink {
@@ -70,34 +69,42 @@
 .btn-custom:hover{
     background-color: #7cd5ff;
 }
+.social-links{
+    display: flex;
+    
+    margin: 2em 0 1em 0;
+    /* margin-top: 2em; */
+
+}
 .social {
-    border: 2px solid #ccc;
-    padding: 5px 0 5px 12px;
-    margin: 0 5px;
-    transition: 0.3s ease;
+    border: 2px solid #4fc3f7;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
 
 .social i {
     font-size: 20px;
     color: #333;
+    transition: 0.3s ease;
 }
 
 .social:hover {
-    background-color: #f5f5f5;
-    border-color: #95d7d7;
+    background-color: #4fc3f7;
+    border-color: #4fc3f7;
+    color: white;
     transform: scale(1.1);
 }
+.social:hover i{
+    color: white;
+}
 
-.social-links a {
-    margin-right: 15px;
-    font-size: 20px;
-    color: #79d8d8;
-    transition: 0.3s;
-}
-.social-links a:hover {
-    color: #272343;
-}
 
 @keyframes fadeSlideIn {
     0% {
@@ -140,5 +147,25 @@
 .x{
     color: #4fc3f7;
 }
+
+.fade-text {
+    opacity: 0;
+    animation: fadeInOut 3s infinite;
+    color: #4fc3f7;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (min-width: 768px) {
+    .desc{
+        width: 70%;
+    }
+}
+
 
 

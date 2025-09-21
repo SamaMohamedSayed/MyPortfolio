@@ -1,12 +1,16 @@
 
 <div class="service-content">
-    <h3 class="title mt-4">My Services <span></span></h3>
-    <p class="my-4">{{msg}}</p>
+    <h3 class="title mt-4">What I Can Do for Your Brand ?</h3>
+    <p class="my-4 msg">{{msg}}</p>
     <div class="cards-container ">
         <div class="service-card " *ngFor="let service of services">
             <i [class]="service.icon"></i>
             <h4>{{service.title}}</h4>
-            <p>{{service.description}}</p>
+            <ul class="service-points">
+                <li *ngFor="let point of service.description.split('-')">
+                    {{ point }}
+                </li>
+            </ul>
         </div>
 
     </div>

@@ -1,37 +1,19 @@
-<div class="text">
+<div class="text mb-4">
   <h3>About Text</h3>
-  @if(myForm){<form [formGroup]="myForm" (ngSubmit)="submit()">
-    <textarea formControlName="aboutText"></textarea>
-    <br>
-    <button class="btn-save">Save</button>
-  </form>}
+  @if(myForm){
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+      <textarea formControlName="aboutText"></textarea>
+      <button class="btn-save btn">Save</button>
+    </form>
+  }
   
 </div>
 
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/dashboard/about/skills">skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/dashboard/about/certif">Certifications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/dashboard/about/edu">Education</a>
-        </li>
-
-      </ul>
-      
-    </div>
-  </div>
-</nav>
+<ul class="headers">
+  <li><a class="nav-link active" aria-current="page" routerLink="/dashboard/about/skills" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Skills</a></li>
+  <li><a class="nav-link" routerLinkActive="active" routerLink="/dashboard/about/certif">Certifications</a></li>
+  <li><a class="nav-link" routerLinkActive="active" routerLink="/dashboard/about/edu">Education</a></li>
+</ul>
 <router-outlet></router-outlet>
 
 

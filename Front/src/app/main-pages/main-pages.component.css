@@ -22,4 +22,5 @@ app-navbar {
     flex-grow: 1;
     box-sizing: border-box;
     padding: 25px;
+    overflow: auto;
 }

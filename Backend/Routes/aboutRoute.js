@@ -18,11 +18,7 @@ router.post('/about', async (req, res) => {
     res.json(await About.create(req.body));
 });
 
-// router.put('/about', async (req, res) => {
-//     const updated={aboutText:req.body.aboutText}
-//     const updatedAbout=await About.findOneAndUpdate({},updated,{new :true})
-//     res.json(updatedAbout)
-// });
+
 router.patch('/', async (req, res) => {
   const about = await About.findOne();
   if (!about) return res.status(404).json({ error: 'Not found' });
@@ -41,47 +37,66 @@ router.get('/skills', async (req, res) => {
     res.json(await Skill.find());
 });
 
-router.post('/skills', upload.single('image'), async (req, res) => {
-    try {
-        const imagePath = req.file ? req.file.filename : null;
+router.post('/skills', upload.array('image'), async (req, res) => {
+  try {
+    const { category } = req.body;
+    let skills = [];
 
-        const skillData = {
-            category: req.body.category,
-            skills: [
-                {
-                    name: req.body.name,
-                    image: imagePath 
-                }
-            ]
+    // لو عندك skills جايين من FormData
+    if (req.body.skills) {
+      const skillsData = Array.isArray(req.body.skills)
+        ? req.body.skills
+        : [req.body.skills];
+
+      skills = skillsData.map((s, index) => {
+        const skillObj = JSON.parse(s); // جاي كـ JSON string من Angular
+        return {
+          name: skillObj.name,
+          image: req.files[index] ? req.files[index].filename : skillObj.image // جديدة أو قديمة
         };
-
-        const newSkill = await Skill.create(skillData);
-        res.status(201).json(newSkill);
-
-    } catch (err) {
-        res.status(500).json({ error: err.message });
+      });
     }
+
+    const newSkill = await Skill.create({ category, skills });
+    res.status(201).json(newSkill);
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
 });
 
 
-router.patch('/skills/:id',upload.single('image'),async(req, res) => {
-    try {
-        const id = req.params.id;
-        const { category, skills } = req.body;
-       
-        const updatedSkill = await Skill.findById(id)
-        if (updatedSkill) {
-            updatedSkill.category = category;
-            updatedSkill.skills = skills;
-            
-            await updatedSkill.save()
-            res.status(201).json({message:"skill updated successfully",data:updatedSkill})
-        }
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: err.message });
+router.patch('/skills/:id', upload.single('image'), async (req, res) => {
+  try {
+    const id = req.params.id;
+    const { category, skills } = req.body;
+
+    const updatedSkill = await Skill.findById(id);
+    if (!updatedSkill) {
+      return res.status(404).json({ message: "Skill not found" });
     }
-})
+
+    updatedSkill.category = category;
+
+    // skills جاي من body (stringified JSON or fields)
+    if (skills) {
+      updatedSkill.skills = Array.isArray(skills) ? skills : JSON.parse(skills);
+    }
+
+    // لو فيه فايل جديد مرفوع
+    if (req.file) {
+      updatedSkill.skills[0].image = req.file.filename;
+    }
+
+    await updatedSkill.save();
+    res.status(200).json({ message: "Skill updated successfully", data: updatedSkill });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.put('/skills/:id', async (req, res) => {
     res.json(await Skill.findByIdAndDelete((req.params.id),{isDeleted:true},{new:true}));
 });
@@ -121,11 +136,12 @@ router.get('/education', async (req, res) => {
 });
 
 router.post('/education', async (req, res) => {
-    const{degree,institution,graduation}=req.body
+    const{title,name,date,description}=req.body
     const edu=Education({
-        degree,
-        institution,
-        graduation
+      title,
+      name,
+      date,
+      description
     })
     await edu.save()
     res.json(edu)

@@ -2,13 +2,13 @@
     <div class="details  col-md-7 col-12" >
         <h5 class="animate-fade-in animate-delay-1">Hello, my name is</h5>
         <h1 class="animate-fade-in animate-delay-2">{{item.name}}</h1>
-        <h2 class="py-3 animate-fade-in animate-delay-3">I'm a <span class="typing-text">{{ displayText }}</span><span class="cursor">|</span></h2>
-        <p class="animate-fade-in animate-delay-4 w-lg-50 w-md-75 py-3">{{item.description}}</p>
+        <h2 class="py-3 animate-fade-in animate-delay-3">I'm a <span class="fade-text">{{ displayText }}</span><span class="cursor">|</span></h2>
+        <p class="animate-fade-in animate-delay-4 py-3 desc">{{item.description}}</p>
         <p class="animate-fade-in animate-delay-5" ><i class="fas fa-bullseye x"></i> Ready to see what I do best? Let’s dive in!</p>
-        <div class="social-links d-flex pt-3 pb-2 animate-fade-in animate-delay-5">
-            <div class="social"><a href="#"><i class="fab fa-linkedin"></i></a></div>
-            <div class="social"><a href="#"><i class="fab fa-github"></i></a></div>
-            <div class="social"><a href="#"><i class="fa-brands fa-google"></i></a></div>
+        <div class="social-links animate-fade-in animate-delay-5">
+            <div class="social"><a [href]="'https://' + item.linkedin" target="_blank"><i class="fab fa-linkedin"></i></a></div>
+            <div class="social"><a [href]="item.gitHub" target="_blank"><i class="fab fa-github"></i></a></div>
+            <div class="social"><a [href]="'https://mail.google.com/mail/?view=cm&fs=1&to=' +item.gmail" target="_blank"><i class="fa-brands fa-google"></i></a></div>
             <div class="social"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></div>
             
         </div>

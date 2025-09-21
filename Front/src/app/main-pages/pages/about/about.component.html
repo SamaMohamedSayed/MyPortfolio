@@ -2,6 +2,7 @@
     <h3 class="title">About Me
         <span></span>
     </h3>
+    
     <p class="desc">{{ aboutData.about?.aboutText }}</p>
     <ul class="headers">
         <li (click)="showSection('skills')" [class.active]="active === 'skills'">Skills</li>
@@ -22,21 +23,24 @@
 </div>
 
    <ul class="certf" *ngIf="active==='certf'">
-        <li *ngFor="let cert of aboutData.certifications">
+        <li *ngFor="let cert of aboutData.certifications;let i=index" class="animate-fade-in" [ngClass]="'animate-delay-' + i">
             <i [class]="cert.icon"></i>
             {{ cert.title }}, {{cert.year|date}}
         </li>
     </ul>
 
-    <ul class="edu" *ngIf="active==='edu'">
-        <div *ngFor="let edu of aboutData.education">
-            <li>{{edu.degree}}</li>
-            <li>{{edu.institution}}</li>
-            <li>{{edu.graduation}}</li>
+    <div class="row g-4" *ngIf="active==='edu'">
+        <div class="col-md-6 col-lg-4" *ngFor="let edu of aboutData.education;let i=index">
+        <div class="card edu-card h-100 animate-fade-in" [ngClass]="'animate-delay-' + i">
+            <div class="card-body">
+                <h5 class="card-title">{{ edu.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ edu.name }}</h6>
+                <span class="badge mb-3">{{ edu.date }}</span>
+                <p class="card-text">{{ edu.description }}</p>
+            </div>
         </div>
-        <!-- <li *ngFor="let edu of aboutData.education">
-        {{ edu.degree }} – {{ edu.institution}} ({{ edu.graduation }})
-    </li> -->
-    </ul>
+        </div>
+    </div>
+
 
 </div>

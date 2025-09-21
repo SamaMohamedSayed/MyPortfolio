@@ -1,19 +1,72 @@
 .add{
-  background-color: #6bf0f0;
-  color: #141d2f;
-  font-size: 40px;
-  font-weight: 700;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-  transition: 0.5s ease;
-  margin-top: 20px;
-  cursor: pointer;
-
+    background-color: #4fc3f7;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 700;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.5s ease;
+    margin-top: 20px;
+    cursor: pointer;
 }
 .add:hover{
-  transform: scale(1.1);
-  transition: 0.5s ease;
+    transform: scale(1.1);
+    transition: 0.5s ease;
+}
+.btn-edit, .btn-delete {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 130px;
+    transition: all 0.3s ease-in-out;
+}
+.btn-edit {
+    background: #4fc3f7;
+    color: white;
+}
+.btn-edit:hover, .save-btn:hover{
+    background-color: #2abafd;
+}
+.btn-delete {
+    background: #ef5350;
+    color: white;
+}
+.btn-delete:hover{
+    background-color: #e53935;
+}
+.cards-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+.save-btn{
+    background-color: #4fc3f7;
+    color: #FFFFFF;
+    width: 130px;
+}
+.icon{
+    color: #4fc3f7;
+    font-size: 20px;
+}
+.custom{
+    display: flex;
+    flex-direction: column;
+}
+.card-actions{
+    padding:0 15px 12px;
+}
 
+@media (min-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

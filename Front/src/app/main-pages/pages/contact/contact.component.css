@@ -1,5 +1,8 @@
 .title{
     font-weight: 700;
+    font-size: 30px;
+    color: #4fc3f7;
+    text-align: center;
     & span{
     height: 5px;
     width: 165px;

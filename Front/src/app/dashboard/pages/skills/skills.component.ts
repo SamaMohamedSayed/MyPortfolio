@@ -9,7 +9,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrl: './skills.component.css'
 })
 export class SkillsComponent {
-   skillsList: any[] = [];
+  skillsList: any[] = [];
   isEditModalOpen = false;
   skillForm!: FormGroup;
   selectedId: string = '';
@@ -20,9 +20,25 @@ export class SkillsComponent {
     this.loadSkills();
   }
 
+    groupByCategory(data: any[]) {
+    const grouped: any = {};
+
+    data.forEach(item => {
+      if (!grouped[item.category]) {
+        grouped[item.category] = {
+          category: item.category,
+          skills: []
+        };
+      }
+      grouped[item.category].skills.push(...item.skills);
+    });
+
+    return Object.values(grouped);
+  }
+
   loadSkills() {
     this.global.getSkills().subscribe((res: any) => {
-      this.skillsList = res;
+      this.skillsList = this.groupByCategory(res);
       console.log(res);
       
     });
@@ -76,5 +92,78 @@ export class SkillsComponent {
       }
     });
   }
+
+  openAddModal() {
+  this.skillForm = new FormGroup({
+    category: new FormControl('', Validators.required),
+    skills: new FormArray([
+      new FormGroup({
+        name: new FormControl('', Validators.required),
+        image: new FormControl(null)
+      })
+    ])
+  });
+
+  this.selectedId = '';
+  this.isEditModalOpen = true;
+}
+
+addSkillField() {
+  this.skillArray.push(
+    new FormGroup({
+      name: new FormControl('', Validators.required),
+      image: new FormControl('')
+    })
+  );
+}
+
+
+onFileSelected(event: any, index: number) {
+  const file = event.target.files[0];
+  if (file) {
+    this.skillArray.at(index).get('image')?.setValue(file);
+  }
+}
+onSubmit() {
+  if (this.skillForm.invalid) return;
+
+  const formData = new FormData();
+  formData.append('category', this.skillForm.get('category')?.value);
+
+this.skillArray.controls.forEach((control, index) => {
+  const skillObj = {
+    name: control.get('name')?.value,
+    image: control.get('image')?.value
+  };
+
+  formData.append('skills', JSON.stringify(skillObj));
+
+  // لو صورة جديدة
+  const imageVal = control.get('image')?.value;
+  if (imageVal instanceof File) {
+    formData.append('image', imageVal);
+  }
+});
+
+
+  if (this.selectedId) {
+    // Update
+    this.global.updateSkills(formData, this.selectedId).subscribe({
+      next: () => {
+        this.isEditModalOpen = false;
+        this.loadSkills();
+      }
+    });
+  } else {
+    // Add
+    this.global.addSkill(formData).subscribe({
+      next: () => {
+        this.isEditModalOpen = false;
+        this.loadSkills();
+      }
+    });
+  }
+}
+
 
 }

@@ -14,16 +14,20 @@
 
     <ng-container *ngIf="ServiceId === service._id; else viewMode">
       <form [formGroup]="myForm" (ngSubmit)="saveService()">
-        <input type="text" formControlName="title">
-        <textarea formControlName="description"></textarea>
-        <button class="btn btn-success btn-sm mt-2">Save</button>
+        <input type="text" formControlName="title" class="form-control">
+        <textarea formControlName="description" class="form-control my-2"></textarea>
+        <button class="btn save-btn">Save</button>
       </form>
     </ng-container>
 
 
     <ng-template #viewMode>
       <h3 class="title">{{ service.title }}</h3>
-      <p class="description">{{ service.description }}</p>
+      <ul class="service-points">
+        <li *ngFor="let point of service.description.split('-')">
+          {{ point }}
+        </li>
+      </ul>
     </ng-template>
   </div>
 </div>
@@ -43,7 +47,7 @@
         <form action="" [formGroup]="myForm" (ngSubmit)="submit()">
           <input type="text" placeholder="icon: Ex: fa-solid fa-list" formControlName="icon" class="form-control">
           <input type="text" placeholder="Service Name " formControlName="title" class="form-control my-3">
-          <input type="text" placeholder="description " formControlName="description" class="form-control">
+          <textarea name="" id=""placeholder="description " formControlName="description" class="form-control"></textarea>
           <div class="text-center my-3">
             <button class="btn btn-primary px-5">Add</button>
           </div>

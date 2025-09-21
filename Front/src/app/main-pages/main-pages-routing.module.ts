@@ -6,13 +6,14 @@ import { AboutComponent } from './pages/about/about.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { animation } from '@angular/animations';
 
 const routes: Routes = [{ path: '', component: MainPagesComponent ,children:[
   {path:'',component:IndexComponent},
-  {path:'about',component:AboutComponent},
-  {path:'projects',component:ProjectsComponent},
-  {path:'service',component:ServicesComponent},
-  {path:'contact',component:ContactComponent}
+  {path:'about',component:AboutComponent,data:{animation:'About'}},
+  {path:'projects',component:ProjectsComponent,data:{animation:'Projects'}},
+  {path:'service',component:ServicesComponent,data:{animation:'Services'}},
+  {path:'contact',component:ContactComponent,data:{animation:'Contact'}}
 ]}];
 
 @NgModule({

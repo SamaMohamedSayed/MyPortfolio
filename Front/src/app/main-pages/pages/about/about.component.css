@@ -34,41 +34,69 @@ ul {
     padding: 5px 10px;
     border-bottom: 2px solid #4fc3f7
 }
-/* .skills{
-    display: flex;
-    justify-content: space-between;
-} */
-.skills-grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 50px;
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* ديناميكي */
+  gap: 30px;
+  justify-items: center;
 }
+
 .skills-grid li {
+  list-style: none;
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
   text-align: center;
 }
-.skills-section h4 {
-  font-size: 24px;
-  margin-bottom: 25px;
-  color: #333;
-  text-align: center;
+
+.skills-grid li:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
+
 .skills-grid img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
-  border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   transition: transform 0.3s ease;
 }
 
-.skills-grid img:hover {
-  transform: scale(1.1);
+.skills-grid li:hover img {
+  transform: rotate(6deg) scale(1.1);
 }
 
 .skills-grid span {
   display: block;
-  font-size: 16px;
-  color: #555;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* عنوان الكاتيجوري */
+.skills-section h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+  position: relative;
+}
+
+.skills-section h4::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  margin: 8px auto 0;
+  border-radius: 2px;
 }
 
 
@@ -106,22 +134,51 @@ ul {
   font-size: 18px;
 }
 
-.edu {
-  list-style-type: none;         /* لإزالة النقاط */
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.8;              /* مسافة بين السطور */
-  color: #333;                   /* لون النص */
+.edu-card {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-.edu li {
-  padding: 8px 0;                /* مسافة عمودية بين العناصر */
-  border-bottom: 1px solid #ddd; /* خط فاصل خفيف */
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.edu li:last-child {
-  border-bottom: none;           /* إزالة الخط من آخر عنصر */
+.edu-card .badge {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #4fc3f7;
 }
+
+.edu-card h5{
+  font-size: 20px;
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeSlideIn 0.6s ease forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.3s; }
+.animate-delay-2 { animation-delay: 0.6s; }
+.animate-delay-3 { animation-delay: 0.9s; }
+.animate-delay-4 { animation-delay: 1.2s; }
+.animate-delay-5 { animation-delay: 1.5s; } 
+
+
 

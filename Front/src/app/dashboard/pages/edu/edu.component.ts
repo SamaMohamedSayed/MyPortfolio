@@ -18,9 +18,10 @@ export class EduComponent {
   
     ngOnInit(){
       this.eduForm=new FormGroup({
-          degree:new FormControl(''),
-          institution:new FormControl(''),
-          graduation:new FormControl('')
+          title:new FormControl(''),
+          name:new FormControl(''),
+          description:new FormControl(''),
+          date:new FormControl('')
         })
       this.getEducation();
     }
@@ -36,9 +37,10 @@ export class EduComponent {
       const selected=this.eduData.find(s=>s._id==id)
       if(selected){
         this.eduForm.patchValue({
-          degree:selected.degree,
-          institution:selected.institution,
-          graduation:selected.graduation,
+          title:selected.title,
+          name:selected.name,
+          description:selected.description,
+          date:selected.date,
         })
         this.eduId = id;
         console.log(this.eduId)
@@ -60,9 +62,10 @@ export class EduComponent {
   
     assignData(){
       const formData = {
-        degree:this.eduForm.get('degree')?.value,
-        institution:this.eduForm.get('institution')?.value,
-        graduation:this.eduForm.get('graduation')?.value,
+        title:this.eduForm.get('title')?.value,
+        name:this.eduForm.get('name')?.value,
+        date:this.eduForm.get('date')?.value,
+        description:this.eduForm.get('description')?.value,
       }
   
       return formData
@@ -79,7 +82,7 @@ export class EduComponent {
   
     submit(){
       this.global.addEdu(this.assignData()).subscribe(res=>{
-        console.log('new project: ',res)
+        console.log('new Edu: ',res)
       })
       this.getEducation()
     }

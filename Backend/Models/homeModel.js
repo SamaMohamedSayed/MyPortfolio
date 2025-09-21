@@ -16,10 +16,10 @@ const homeSchema=new mongoose.Schema({
         required:true
     },
     cv:{type:String},
-    
-    socialLinks:{
-        type:String
-    }
+    gitHub:{type:String},
+    linkedin:{type:String},
+    gmail:{type:String},
+    facebook:{type:String}
 
 })
 

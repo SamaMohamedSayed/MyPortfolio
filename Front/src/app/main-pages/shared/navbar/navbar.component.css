@@ -6,7 +6,6 @@
 .nav-custom{
     display: flex;
     padding: 150px 0 0 60px;
-    /* color:#272343; */
     font-size: 18px;
 }
 .title{
@@ -18,14 +17,14 @@
 .nav-w{
   width: 270px !important;
 }
-
 .brand {
     position: relative;
-    top: 50px;
+    top: 70px;
     left: 50px;
     display: inline-block;
     padding: 10px 20px;
     /* color: #272343; */
+    /* color: #4fc3f7; */
     font-size: 26px;
     font-weight: 600;
     text-align: center;
@@ -55,7 +54,7 @@
 }
 
 .nav-item{
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     border-bottom: 1px solid #dedbef;
     width: 50%;
 }

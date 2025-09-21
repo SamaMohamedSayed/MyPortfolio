@@ -63,6 +63,12 @@ export class GlobalService {
   deleteSkill(id:string):Observable<any>{
     return this.http.put(`${this.baseUrl}about/skills/${id}`,{})
   }
+  addSkill(body:any):Observable<any>{
+    return this.http.post(`${this.baseUrl}about/skills`,body)
+  }
+
+
+
   projectPage():Observable<any>{
     return this.http.get(`${this.baseUrl}project`)
   }

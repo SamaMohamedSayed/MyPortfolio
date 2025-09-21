@@ -3,7 +3,7 @@ header.topbar{
     height:72px;
     display:flex;
     justify-content:space-between;
-    padding:0 22px;
+    /* padding:0 22px; */
     background:transparent;
     border-bottom:1px solid rgba(255,255,255,0.03)
 }

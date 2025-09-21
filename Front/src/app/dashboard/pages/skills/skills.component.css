@@ -1,59 +1,55 @@
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+  gap: 20px;
   justify-content: center;
-  margin-top: 3em;
   perspective: 1000px;
+  margin-bottom: 15px;
 }
 
-/* ===================== الكارد  */
 .card {
   border-radius: 20px;
   padding: 20px;
-  background: rgba(19, 19, 19, 0.85);
-  border: 1px solid rgba(0, 255, 238, 0.3);
+  background: #ECEFF1;
+  border: 1px solid #4FC3F7;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 255, 238, 0.15);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) !important;
   box-shadow: 0 8px 25px rgba(0, 255, 238, 0.3);
 }
 
-.card-header {
+.card-heade {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #d6d5d5;
 }
 
-.card-header h3 {
+.card-heade h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #00ffee;
+  color: #4FC3F7;
 }
 
-.card-header small {
+.card-heade small {
   font-size: 14px;
-  color: #aaa;
-}
-
-.stat-item {
-  margin-bottom: 3em;
+  color: #9c9b9b;
 }
 
 .stat-label {
-  font-size: 15px;
-  color: #ddd;
+  font-size: 17px;
+  color: #454545;
   line-height: 1.5;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #e3e1e1a2;
   gap: 6px;
   margin-bottom: 6px;
 }
@@ -62,52 +58,36 @@
   width: 22px;
   height: 22px;
   object-fit: cover;
-  border-radius: 4px;
+  margin-right:6px;
+  border-radius:4px;
   border: 1px solid rgba(255,255,255,0.1);
 }
 
 .card-actions {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  position: absolute;
-  transform: translateX(25%);
-  bottom: 5%;
-  margin-top: 2rem;
+
 }
 
 .btn {
-  flex: 1;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
+  font-size: 15px;
   font-weight: 500;
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .btn-edit {
-  background-color: rgba(0, 200, 255, 0.15);
-  color: #00d4ff;
+    color: #4FC3F7;
 }
 
 .btn-edit:hover {
-  background-color: rgba(0, 200, 255, 0.3);
   transform: scale(1.05);
 }
 
 .btn-delete {
-  background-color: rgba(255, 50, 100, 0.15);
-  color: #ff4f6d;
+    color: #ef5350;
 }
 
 .btn-delete:hover {
-  background-color: rgba(255, 50, 100, 0.3);
   transform: scale(1.05);
 }
 
@@ -134,30 +114,27 @@
   z-index: 9999;
 }
 
-/* ===================== صندوق المودال ===================== */
 .custom-modal {
-  background: rgba(19, 19, 19, 0.95);
+  background:#ECEFF1;
   width: 500px;
   max-width: 95%;
-  max-height: 80vh; /* أقصى ارتفاع للمودال */
+  max-height: 80vh;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 255, 238, 0.15);
-  border: 1px solid rgba(0, 255, 238, 0.3);
+  border: 1px solid #4FC3F7;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  color: #fff;
   animation: fadeInUp 0.3s ease;
 }
 
-/* ===================== الهيدر داخل المودال ===================== */
 .modal-header {
   flex: 0 0 auto;
-  background: rgba(0, 255, 238, 0.1);
-  border-bottom: 1px solid rgba(0, 255, 238, 0.3);
-  color: #00ffee;
+  background: #eceff18a;
+  border-bottom: 1px solid #4FC3F7;
+  /* color: #4FC3F7; */
   padding: 15px 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -170,7 +147,7 @@
 .close-btn {
   background: transparent;
   border: none;
-  color: #00ffee;
+  color: #454545;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -182,42 +159,30 @@
   flex: 1;
 }
 
-/* ===================== الحقول داخل المودال ===================== */
-.form-group {
-  margin-bottom: 15px;
-}
-
 .form-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #00ffee;
+  color: #454545;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group input{
   width: 100%;
   padding: 8px 10px;
-  background: rgba(25, 25, 30, 0.95);
-  color: #fff;
-  border: 1px solid rgba(0, 255, 238, 0.3);
+  background: transparent;
+  color: #454545;
+  border: 1px solid transparent;
   border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(1, 45, 42, 0.228);
   font-size: 1rem;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #00ffee;
-  box-shadow: 0 0 5px #00ffee;
+.form-group input:focus{
+  border-color: #4FC3F7;
   outline: none;
 }
 
-textarea {
-  height: 120px;
-}
-
-/* ===================== أزرار داخل المودال ===================== */
 .modal-actions {
   display: flex;
   justify-content: flex-end;
@@ -225,8 +190,8 @@ textarea {
 }
 
 .btn-save {
-  background: rgba(0, 255, 238, 0.15);
-  color: #00ffee;
+  background: #4fc2f7;
+  color: white;
   border: 1px solid rgba(0, 255, 238, 0.3);
   padding: 8px 15px;
   border-radius: 8px;
@@ -235,13 +200,13 @@ textarea {
 }
 
 .btn-save:hover {
-  background: rgba(0, 255, 238, 0.3);
+  background:#2abafd;
   transform: scale(1.05);
 }
 
 .btn-cancel {
-  background: rgba(255, 50, 100, 0.15);
-  color: #ff4f6d;
+  background: #ef5350;
+  color: white;
   border: 1px solid rgba(255, 50, 100, 0.3);
   padding: 8px 15px;
   border-radius: 8px;
@@ -250,12 +215,29 @@ textarea {
 }
 
 .btn-cancel:hover {
-  background: rgba(255, 50, 100, 0.3);
+  background:#e53935;
   transform: scale(1.05);
 }
 
-/* ===================== أنيميشن المودال ===================== */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.add{
+    background-color: #4fc3f7;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 700;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.5s ease;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.add:hover{
+    transform: scale(1.1);
+    transition: 0.5s ease;
 }

@@ -1,46 +1,112 @@
 @if(myForm){
-    <!-- Content -->
-<main class="content">
-    <section class="grid">
-        <div class="card">
-            <h3>Projects</h3>
-            <p class="small">Total: <strong>12</strong></p>
-        </div>
-        <div class="card">
-            <h3>Skills</h3>
-            <p class="small">Total: <strong>18</strong></p>
-        </div>
-        <div class="card">
-            <h3>Messages</h3>
-            <p class="small">Unread: <strong>3</strong></p>
-        </div>
-        <div class="card">
-            <h3>Recent Activity</h3>
-            <p class="small">Added project "Mealify" 2 days ago</p>
-        </div>
-        <div class="card">
-            <h3>Recent Activity</h3>
-            <p class="small">Added project "Mealify" 2 days ago</p>
-        </div>
-    </section>
+  <main class="content">
+    <div class="counter">
+      <div class="job-stats text-center p-3 pt-4 ">
+      <!-- <h5 class="mb-3 text-success">Application Summary</h5> -->
+      <div class="row">
+          <div class="col-4 d-flex align-items-center">
+              <div class="me-3">
+                  <i class="fa-solid fa-diagram-project fs-3 icon"></i>
+              </div>
+              <div class="d-flex flex-column">
+                  <strong class="text">Projects created</strong>
+                  <p class="mb-0">{{projectsCounter}}</p>
+              </div>
+              
+          </div>
+          <div class="col-4 d-flex align-items-center">
+              <div class="me-3">
+                  <i class="fa-solid fa-lightbulb fs-3 icon"></i>
+              </div>
+              <div class="d-flex flex-column ">
+                  <strong class="text">My Skills</strong>
+                  <p class="mb-0">{{skillsCounter}}</p>
+              </div>
+              
+          </div>
 
-        <!-- Page Section -->
-        <div class="page-section">
-            
-            <form action="" [formGroup]="myForm" class="form-custom row" (ngSubmit)="submit()">
-                <div class="img col-6  position-relative">
-                    <img [src]="'http://localhost:4000/images/'+homePage.img" alt="">
-                    <input type="file" #fileInput class="d-none" (change)="onImgSelected($event)">
-                    <i class="fa-solid fa-upload fs-1 upload-icon" (click)="fileInput.click()"></i>
-                </div>
-                <div class="inputs col-6">
-                    <input type="text" formControlName="name" class="form-control">
-                    <input type="file" (change)="onFileSelected($event)" #cvInput class="d-none">
-                    <button class="btn btn-primary" (click)="cvInput.click()">Update CV</button>
-                    <textarea name="" id="" formControlName="description" class="form-control"></textarea>
-                    <button class="btn btn-primary mt-3">Edit</button>
-                </div>
-            </form>
+          <div class="col-4 d-flex align-items-center">
+              <div class="me-3">
+                  <i class="fa-solid fa-envelope fs-3 icon"></i>
+              </div>
+              <div class="d-flex flex-column ">
+                  <strong class="text">Messages</strong>
+                  <p class="mb-0">{{msgCounter}}</p>
+              </div>
+              
+          </div>
+<!-- 
+          <div class="col-3 d-flex align-items-center">
+              <div class="me-3">
+                  <i class="fa-solid fa-xmark fs-3 text-danger"></i>
+              </div>
+              <div class="d-flex flex-column ">
+                  <strong class="text-danger">Rejected:</strong>
+                  <p class="mb-0">0</p>
+              </div>
+              
+          </div> -->
+      </div>
+      </div>
+
+    </div>
+    <div class="page-section">
+      <form [formGroup]="myForm" (ngSubmit)="submit()" class="form-custom">
+
+        <!-- Profile Info -->
+        <div class="grid">
+          <div class="">
+            <h4 class="mb-4">Profile Setting</h4>
+            <label for="">Name<span class="req">*</span></label>
+            <input type="text" formControlName="name" class="form-control mb-2" placeholder="Your Name">
+            <label for="">Description<span class="req">*</span></label>
+            <textarea formControlName="description" class="form-control" placeholder="Description"></textarea>
+
+            <!-- Social Links -->
+            <div class="mt-3 link">
+              <div class="input-group mb-2">
+                  <span class="input-group-text"><i class="fab fa-github"></i></span>
+                  <input type="text" formControlName="gitHub" class="form-control" placeholder="GitHub link">
+              </div>
+  
+              <div class="input-group mb-2">
+                  <span class="input-group-text"><i class="fab fa-linkedin"></i></span>
+                  <input type="text" formControlName="linkedin" class="form-control" placeholder="LinkedIn link">
+              </div>
+  
+              <div class="input-group mb-2">
+                  <span class="input-group-text"><i class="fa-brands fa-google"></i></span>
+                  <input type="email" formControlName="gmail" class="form-control" placeholder="Gmail">
+              </div>
+            </div>
+
+            <input type="file" (change)="onFileSelected($event)" #cvInput class="d-none">
+            <button type="button" class="btn btn-outline-secondary" (click)="cvInput.click()">
+              <i class="fa-solid fa-file"></i> Update CV
+            </button>
+          </div>
+
+          <div class="image">
+            <div class="img-wrapper">
+              <img [src]="'http://localhost:4000/images/' + homePage.img" alt="" class="shadow-sm" />
+              <input type="file" #fileInput class="d-none" (change)="onImgSelected($event)">
+              <i class="fa-solid fa-upload upload-icon" (click)="fileInput.click()"></i>
+            </div>
+          </div>
+
+
         </div>
-</main>
+
+
+
+        <!-- Save Button -->
+        <div class="text-end">
+          <button type="submit" class="btn edit-btn">
+            <i class="fa-solid fa-save"></i> Save Changes
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </main>
 }

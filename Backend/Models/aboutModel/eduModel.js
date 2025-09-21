@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
 const educationSchema = new mongoose.Schema({
-    degree: { type: String, required: true },
-    institution: { type: String },
-    graduation: { type: String },
+    title: { type: String, required: true },
+    name: { type: String },
+    date: { type: String },
+    description:{type:String},
     isDeleted:{
         type:Boolean,
         default:false

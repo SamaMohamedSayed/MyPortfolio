@@ -1,11 +1,11 @@
-<aside class="sidebar">
-      <div class="brand">
+<aside class="sidebar d-none d-lg-block">
+    <div class="brand">
         <div class="logo">SM</div>
         <div>
-          <h1>Sama Mohamed</h1>
-          <div class="small">Portfolio Admin</div>
+            <h1>Sama Mohamed</h1>
+            <div class="small">Portfolio Admin</div>
         </div>
-      </div>
+    </div>
 
       <nav class="menu">
         <a routerLink="overview" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa-solid fa-house"></i> Dashboard</a>
@@ -15,4 +15,45 @@
         <a routerLink="service" routerLinkActive="active"><i class="fa-solid fa-briefcase"></i> Services</a>
         <a routerLink="contact" routerLinkActive="active"><i class="fa-solid fa-envelope"></i> Messages</a>
       </nav>
-    </aside>
+</aside>
+
+
+<nav class="navbar bg-body-tertiary fixed-top d-block d-lg-none ">
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">Portfolio</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavba" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start w-custom" tabindex="-1" id="offcanvasNavba" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <div class="brand">
+              <div class="logo">SM</div>
+              <div>
+                <h1>Sama Mohamed</h1>
+                <div class="small">Portfolio Admin</div>
+              </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a routerLink="overview" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa-solid fa-house"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="about" routerLinkActive="active"><i class="fa-solid fa-user"></i> About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="project" routerLinkActive="active"><i class="fa-solid fa-folder-open"></i> Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="service" routerLinkActive="active"><i class="fa-solid fa-briefcase"></i> Services</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="contact" routerLinkActive="active"><i class="fa-solid fa-envelope"></i> Messages</a>
+                </li> 
+            </ul>
+        </div>
+        </div>
+    </div>
+</nav>

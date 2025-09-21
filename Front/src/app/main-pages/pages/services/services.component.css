@@ -1,12 +1,22 @@
 .title{
+    text-align: center;
     font-weight: 700;
+    font-size: 30px;
+    color: #4fc3f7;
     & span{
     height: 5px;
     width: 165px;
     background-color: #4fc3f7;
     display: block;
+    text-align: center;
     margin-top: 8px;
     }
+}
+
+.msg{
+    text-align: center;
+    width: 50%;
+    margin: auto;
 }
 
 .cards-container {
@@ -14,24 +24,19 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* justify-content: space-between; */
 }
 
 .service-card {
     background-color: white;
-    padding: 17px 15px;
+    padding: 16px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* width: 30%; */
 }
 
 .service-card h4 {
     margin-bottom: 12px;
     font-size: 1.3rem;
-    /* color: #95d7d7; */
 }
 
 .service-card p {
@@ -42,12 +47,28 @@
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+    border: 1px solid #4fc3f7;
 }
 i{
     font-size: 28px;
     color: #4fc3f7;
     margin-bottom: 20px;
 }
+
+ul.service-points {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.service-points li:first-child{
+    margin-left: 0;
+}
+ul.service-points li:not(:first-child) {
+    list-style-type: disc;
+    margin-left: 32px; 
+    margin-top: 10px;
+}
+
 
 
 @media (min-width: 768px) {

@@ -1,56 +1,91 @@
-
+.icon{
+    color: #4FC3F7;
+}
+/* .text{
+    color: #4FC3F7;
+} */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    grid-template-columns:1fr;
     gap:16px
 }
-.card{
-    background:#ECEFF1;
-    padding:16px;
-    border-radius:12px;
-    border: 1px solid #81D4FA;
+
+.counter{
+    margin-bottom: 2%;
+    background-color: #ECEFF1;
+    height: 100px;
+    border-radius: 15px;
 }
 .page-section{
-    margin-top:24px;
+    /* margin-top:24px; */
     padding:25px;
-    min-height:200px;
     background-color: #ECEFF1;
     border: 1px solid #81D4FA;
     border-radius: 10px;
-    color: #e6eef6;
+
 }
-.small{
-    color: #000000;
-}
-h3{
-    color: #000000;
-    font-size: 25px;
+.req{
+    color: red;
 }
 
-img{
-    width: 49%;
-    border-radius: 10px;
-    /* width: 280px; */
-}
-.upload-icon{
-    position: absolute;
-    bottom: 0px;
-    right: 100px;
-    cursor: pointer;
-    color:white
-}
-.inputs{
+.image {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
+
+.img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.img-wrapper img {
+    display: block;
+    width: 270px;
+    border-radius: 10px;
+}
+
+.upload-icon {
+    position: absolute;
+    right: 0px;
+    bottom: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 2em;
+    padding: 6px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+}
+
+.link i{
+    color: #4FC3F7;
+}
+
 textarea{
-    height: 150px;
+    height: 120px;
 }
-/* .form-custom{
-    display: flex; 
-    justify-content: space-between;
-    gap: 1em;
-} */
+.btn {
+    /* flex: 1; */
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cv-btn,.edit-btn{
+    background: #4FC3F7;
+    color: white;
+}
+
+.edit-btn:hover,.cv-btn:hover {
+    background:#2abafd;
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
